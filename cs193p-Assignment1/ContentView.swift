@@ -24,7 +24,6 @@ struct ContentView: View {
                   "🍌", "🍉", "🍇", "🍓", "🫐",
                   "🍈", "🍒", "🍑", "🥭", "🍍"]
     
-    @State var emojiCount = 15
     
 
     var body: some View {
@@ -33,7 +32,7 @@ struct ContentView: View {
                 .font(.largeTitle).foregroundColor(.blue)
             ScrollView {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 65))]) {
-                    ForEach(theme[0..<emojiCount], id: \.self) { emoji in
+                    ForEach(theme[0...theme.count], id: \.self) { emoji in
                         CardView(content: emoji).aspectRatio(2/3, contentMode: .fit)
                     }
                 }
@@ -61,6 +60,7 @@ struct ContentView: View {
         }, label: {
             VStack {
                 Image(systemName: "person.fill")
+                Text("human")
             }
         })
     }
@@ -71,6 +71,7 @@ struct ContentView: View {
         } label: {
             VStack {
                 Image(systemName: "hare.fill")
+                Text("animal")
             }
         }
     }
@@ -81,13 +82,11 @@ struct ContentView: View {
         } label: {
             VStack {
                 Image(systemName: "applelogo")
+                Text("fruit")
             }
         }
     }
 }
-
-
-
 
 struct CardView: View {
     var content: String
@@ -111,25 +110,6 @@ struct CardView: View {
         })
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 struct ContentView_Previews: PreviewProvider {

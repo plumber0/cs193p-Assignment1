@@ -8,13 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
-    var emojis = ["1️⃣", "2️⃣", "🤚", "👶", "👧",
-                  "🧒", "👦", "👩", "🧑", "👨",
-                  "👩‍🦱", "🧑‍🦱", "👨‍🦱", "👩‍🦰", "🧑‍🦰",
-                  "👨‍🦰", "👱‍♀️", "👱", "👱‍♂️", "👩‍🦳",
-                  "🧑‍🦳", "👨‍🦳", "👩‍🦲", "🧑‍🦲"]
+    @State var theme: [String] = ["1️⃣", "2️⃣", "🤚", "👶", "👧",
+                                  "🧒", "👦", "👩", "🧑", "👨",
+                                  "👩‍🦱", "🧑‍🦱", "👨‍🦱", "👩‍🦰", "🧑‍🦰"].shuffled()
     
-    @State var emojiCount = 20
+    var humans = ["1️⃣", "2️⃣", "🤚", "👶", "👧",
+                  "🧒", "👦", "👩", "🧑", "👨",
+                  "👩‍🦱", "🧑‍🦱", "👨‍🦱", "👩‍🦰", "🧑‍🦰"]
+    
+    var animals = ["🐶", "🐱", "🐭", "🐹", "🐰",
+                   "🦊", "🐻", "🐼", "🐻‍❄️", "🐨",
+                   "🐯", "🦁", "🐮", "🐷", "🐽"]
+    
+    var fruits = ["🍏", "🍎", "🍐", "🍊", "🍋",
+                  "🍌", "🍉", "🍇", "🍓", "🫐",
+                  "🍈", "🍒", "🍑", "🥭", "🍍"]
+    
+    @State var emojiCount = 15
     
 
     var body: some View {
@@ -23,16 +33,18 @@ struct ContentView: View {
                 .font(.largeTitle).foregroundColor(.blue)
             ScrollView {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 65))]) {
-                    ForEach(emojis[0..<emojiCount], id: \.self) { emoji in
+                    ForEach(theme[0..<emojiCount], id: \.self) { emoji in
                         CardView(content: emoji).aspectRatio(2/3, contentMode: .fit)
                     }
                 }
             }
         Spacer()
         HStack {
-            remove
+            humanTheme
             Spacer()
-            add
+            animalTheme
+            Spacer()
+            fruitTheme
         }
         .font(.largeTitle)
         .padding(.horizontal)
@@ -43,36 +55,36 @@ struct ContentView: View {
     }
     
     
-    var remove: some View {
+    var humanTheme: some View {
         Button(action: {
-            if emojiCount > 1 {
-                emojiCount -= 1
-            }
+            theme = humans.shuffled()
         }, label: {
             VStack {
-                Image(systemName: "minus.circle")
+                Image(systemName: "person.fill")
             }
         })
     }
     
-    var add: some View {
+    var animalTheme: some View {
         Button {
-            if emojiCount < emojis.count {
-                emojiCount += 1
-            }
+            theme = animals.shuffled()
         } label: {
             VStack {
-                Image(systemName: "plus.circle")
+                Image(systemName: "hare.fill")
+            }
+        }
+    }
+    
+    var fruitTheme: some View {
+        Button {
+            theme = fruits.shuffled()
+        } label: {
+            VStack {
+                Image(systemName: "applelogo")
             }
         }
     }
 }
-
-
-
-
-
-
 
 
 

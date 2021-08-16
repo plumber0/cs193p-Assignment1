@@ -32,7 +32,7 @@ struct ContentView: View {
                 .font(.largeTitle).foregroundColor(.blue)
             ScrollView {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 65))]) {
-                    ForEach(theme[0...theme.count], id: \.self) { emoji in
+                    ForEach(theme[0..<theme.count], id: \.self) { emoji in
                         CardView(content: emoji).aspectRatio(2/3, contentMode: .fit)
                     }
                 }

@@ -27,12 +27,13 @@ struct ContentView: View {
     
 
     var body: some View {
+        let randomNum = Int.random(in: 8..<theme.count)
         VStack{
             Text("Memorize!")
                 .font(.largeTitle).foregroundColor(.blue)
             ScrollView {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 65))]) {
-                    ForEach(theme[0..<theme.count], id: \.self) { emoji in
+                    ForEach(theme[0..<randomNum], id: \.self) { emoji in
                         CardView(content: emoji).aspectRatio(2/3, contentMode: .fit)
                     }
                 }
@@ -59,8 +60,8 @@ struct ContentView: View {
             theme = humans.shuffled()
         }, label: {
             VStack {
-                Image(systemName: "person.fill")
-                Text("human")
+                Image(systemName: "person.fill").font(.largeTitle)
+                Text("human").font(.body)
             }
         })
     }
@@ -70,8 +71,8 @@ struct ContentView: View {
             theme = animals.shuffled()
         } label: {
             VStack {
-                Image(systemName: "hare.fill")
-                Text("animal")
+                Image(systemName: "hare.fill").font(.largeTitle)
+                Text("animal").font(.body)
             }
         }
     }
@@ -81,8 +82,8 @@ struct ContentView: View {
             theme = fruits.shuffled()
         } label: {
             VStack {
-                Image(systemName: "applelogo")
-                Text("fruit")
+                Image(systemName: "applelogo").font(.largeTitle)
+                Text("fruit").font(.body)
             }
         }
     }

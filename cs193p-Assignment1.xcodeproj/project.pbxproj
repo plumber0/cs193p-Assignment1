@@ -11,6 +11,7 @@
 		E1141ECF26CA4EBA0067CE5F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1141ECE26CA4EBA0067CE5F /* ContentView.swift */; };
 		E1141ED126CA4EBB0067CE5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1141ED026CA4EBB0067CE5F /* Assets.xcassets */; };
 		E1141ED426CA4EBB0067CE5F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1141ED326CA4EBB0067CE5F /* Preview Assets.xcassets */; };
+		E182B23326CBB85900D22A47 /* MemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E182B23226CBB85900D22A47 /* MemoryGame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		E1141ED026CA4EBB0067CE5F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1141ED326CA4EBB0067CE5F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E1141ED526CA4EBB0067CE5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E182B23226CBB85900D22A47 /* MemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				E1141ECC26CA4EBA0067CE5F /* cs193p_Assignment1App.swift */,
 				E1141ECE26CA4EBA0067CE5F /* ContentView.swift */,
+				E182B23226CBB85900D22A47 /* MemoryGame.swift */,
 				E1141ED026CA4EBB0067CE5F /* Assets.xcassets */,
 				E1141ED526CA4EBB0067CE5F /* Info.plist */,
 				E1141ED226CA4EBB0067CE5F /* Preview Content */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E182B23326CBB85900D22A47 /* MemoryGame.swift in Sources */,
 				E1141ECF26CA4EBA0067CE5F /* ContentView.swift in Sources */,
 				E1141ECD26CA4EBA0067CE5F /* cs193p_Assignment1App.swift in Sources */,
 			);
